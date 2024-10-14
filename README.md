@@ -34,13 +34,6 @@ Acesse o Swagger para visualizar e testar os endpoints da API:
 
 http://localhost/swagger/
 
-### ⚙️ Arquitetura da API
-```bash
-index.php: Ponto de entrada da aplicação, responsável por receber todas as chamadas HTTP e encaminhá-las para o controlador correspondente.
-Controllers: Realizam as primeiras validações das requisições.
-DAOs: Manipulam diretamente as ações no banco de dados usando PDO.
-```
-
 ### 🔐 Autenticação e Segurança
 ```bash
 JWT:
