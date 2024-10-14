@@ -48,12 +48,12 @@ Swagger: 4.11
 ├── tables/ # Tabelas de banco de dados (inclui a tabela de usuários)
 ├── public/ # Arquivos públicos acessíveis (ex: index.php)
 ├── src/
-│ ├── config/ # Configuração do acesso ao banco de dados
-│ ├── controllers/ # Controladores da API
-│ ├── dao/ # DAOs para manipulação do banco
-│ ├── helpers/ # Arquivos para auxilio de Autenticação e geração de token JWT
-│ ├── lib/ # Arquivos para auxilio de Autenticação e geração de token JWT
-│ ├── models/ # Modelos para manipulação do banco
-│ ├── swagger/ # HTML de visualização do Swagger
+  ├── config/ # Configuração do acesso ao banco de dados
+  ├── controllers/ # Controladores da API
+  ├── dao/ # DAOs para manipulação do banco
+  ├── helpers/ # Arquivos para auxilio de Autenticação e geração de token JWT
+  ├── lib/ # Arquivos para auxilio de Autenticação e geração de token JWT
+  ├── models/ # Modelos para manipulação do banco
+  ├── swagger/ # HTML de visualização do Swagger
 ├── docker-compose.yml # Configuração dos contêineres Docker
 └── README.md # Documentação do projeto
