@@ -1,16 +1,24 @@
-Projeto API em PHP - Estrutura MVC e Autenticação JWT
-Este repositório contém uma API criada em PHP puro com uma estrutura MVC própria, utilizando PDO para a manipulação do banco de dados. A autenticação é feita por JWT e todas as senhas são armazenadas de forma criptografada.
+# **Projeto API em PHP - Estrutura MVC e Autenticação JWT**
 
-🚀 Como Iniciar o Projeto
-Pré-requisitos:
-Docker instalado.
-Passo a passo:
-Abra o terminal na pasta do projeto.
+Este repositório contém uma API criada em **PHP puro** com uma estrutura MVC própria, utilizando **PDO** para a manipulação do banco de dados. A autenticação é feita por **JWT** e todas as senhas são armazenadas de forma criptografada.
 
-Execute o seguinte comando:
+---
 
-docker compose up --build
-Ao final do processo, os contêineres (incluindo o banco de dados) estarão criados e rodando.
+## 🚀 **Como Iniciar o Projeto**
+
+### Pré-requisitos:
+
+- **Docker** instalado.
+
+### Passo a passo:
+
+1. Abra o terminal na pasta do projeto.
+2. Execute o seguinte comando:
+
+   ```bash
+   docker compose up --build
+   Ao final do processo, os contêineres (incluindo o banco de dados) estarão criados e rodando.
+   ```
 
 🛠️ Acesso ao Banco de Dados
 Use a IDE de sua preferência (como DBeaver, MySQL Workbench, ou phpMyAdmin) para conectar-se ao banco MariaDB com as seguintes credenciais:
@@ -48,12 +56,12 @@ Swagger: 4.11
 ├── tables/ # Tabelas de banco de dados (inclui a tabela de usuários)
 ├── public/ # Arquivos públicos acessíveis (ex: index.php)
 ├── src/
-  ├── config/ # Configuração do acesso ao banco de dados
-  ├── controllers/ # Controladores da API
-  ├── dao/ # DAOs para manipulação do banco
-  ├── helpers/ # Arquivos para auxilio de Autenticação e geração de token JWT
-  ├── lib/ # Arquivos para auxilio de Autenticação e geração de token JWT
-  ├── models/ # Modelos para manipulação do banco
-  ├── swagger/ # HTML de visualização do Swagger
+│ ├── config/ # Configuração do acesso ao banco de dados
+│ ├── controllers/ # Controladores da API
+│ ├── dao/ # DAOs para manipulação do banco
+│ ├── helpers/ # Arquivos para auxilio de Autenticação e geração de token JWT
+│ ├── lib/ # Arquivos para auxilio de Autenticação e geração de token JWT
+│ ├── models/ # Modelos para manipulação do banco
+│ ├── swagger/ # HTML de visualização do Swagger
 ├── docker-compose.yml # Configuração dos contêineres Docker
 └── README.md # Documentação do projeto
