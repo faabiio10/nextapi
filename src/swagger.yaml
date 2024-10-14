@@ -1,0 +1,265 @@
+openapi: 3.0.0
+info:
+  title: CRUD Usuários - Next
+  version: 1.0.0
+  description: Documentação da API
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+
+paths:
+  /login:
+    post:
+      tags: [Login]
+      summary: Realiza o login do usuário
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: usuario@exemplo.com
+                password:
+                  type: string
+                  example: senha123
+      responses:
+        "200":
+          description: Login realizado com sucesso
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                    example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+        "401":
+          description: Credenciais inválidas
+  /users:
+    get:
+      tags: [Usuário]
+      summary: Listagem
+      security:
+        - bearerAuth: []
+      responses:
+        "200":
+          description: Lista de usuários
+          content:
+            application/json:
+              schema:
+                type: object
+        "401":
+          description: Usuário não autenticado
+    post:
+      tags: [Usuário]
+      summary: Cadastro
+      requestBody:
+        required: true
+        content:
+          apllication/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  example: Nome Completo
+                email:
+                  type: string
+                  example: usuario@exemplo.com
+                senha:
+                  type: string
+                  example: Digite uma senha com no mínimo 6 dígitos
+                celular:
+                  type: string
+                  example: 99999999999
+                cpf_cnpj:
+                  type: string
+                  example: 99999999999
+                perfil:
+                  type: string
+                  example: 1 -> Admin, 2 -> Comum
+      responses:
+        "201":
+          description: Usuário criado com sucesso!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Usuário cadastrado com sucesso!
+        "401":
+          description: Usuário não autenticado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Usuário não autenticado!
+    put:
+      tags: [Usuário]
+      summary: Edição
+      requestBody:
+        required: true
+        content:
+          apllication/json:
+            schema:
+              type: object
+              properties:
+                nome:
+                  type: string
+                  example: Nome Completo
+                email:
+                  type: string
+                  example: E-mail já cadastrado
+                senha:
+                  type: string
+                  example: 123456
+                celular:
+                  type: string
+                  example: 99999999999
+                cpf_cnpj:
+                  type: string
+                  example: 99999999999
+                perfil:
+                  type: string
+                  example: 1 -> Admin, 2 -> Comum
+      responses:
+        "200":
+          description: Usuário editado com sucesso!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Usuário editado com sucesso!
+        "401":
+          description: Usuário não autenticado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Usuário não autenticado!
+        "404":
+          description: Usuário não encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Usuário não encontrado!
+    delete:
+      tags: [Usuário]
+      summary: Exclusão
+      requestBody:
+        required: true,
+        content:
+          apllication/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                  example: E-mail já cadastrado
+      responses:
+        "200":
+          description: Usuário excluido com sucesso!
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Usuário excluido com sucesso!
+        "401":
+          description: Usuário não autenticado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Usuário não autenticado!
+        "404":
+          description: Usuário não encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Usuário não encontrado!
+
+  /users/{email}:
+    get:
+      tags: [Usuário]
+      summary: Detalhes
+      parameters:
+        - name: email
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Detalhes do usuário
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  nome:
+                    type: string
+                    example: Nome Completo
+                  email:
+                    type: string
+                    example: E-mail já cadastrado
+                  celular:
+                    type: string
+                    example: 99999999999
+                  cpf_cnpj:
+                    type: string
+                    example: 99999999999
+                  perfil:
+                    type: integer
+                    example: 1
+        "401":
+          description: Usuário não autenticado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Usuário não autenticado!
+        "404":
+          description: Usuário não encontrado
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Usuário não encontrado!
