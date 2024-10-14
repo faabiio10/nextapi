@@ -53,7 +53,6 @@ Composer: para instalação da biblioteca JWT (versão 6.10)
 Swagger: 4.11
 ```
 ### 📂 Estrutura do Projeto
-.
 ```bash
 ├── tables/ # Tabelas de banco de dados (inclui a tabela de usuários)
 ├── public/ # Arquivos públicos acessíveis (ex: index.php)
