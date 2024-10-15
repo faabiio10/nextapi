@@ -1,8 +1,8 @@
 <?php
-    require_once 'src/controllers/AuthController.php';
-    require_once 'src/controllers/UserController.php';
+    require_once __DIR__.'/../src/controllers/AuthController.php';
+    require_once __DIR__.'/../src/controllers/UserController.php';
 
-    require 'src/lib/vendor/autoload.php';
+    require __DIR__.'/../src/lib/vendor/autoload.php';
 
     $request = $_SERVER['REQUEST_URI'];
     $method = $_SERVER['REQUEST_METHOD'];
