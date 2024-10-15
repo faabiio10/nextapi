@@ -1,6 +1,6 @@
 <?php
-require_once 'config/Database.php';
-require_once 'models/User.php';
+require_once __DIR__ . '/../config/Database.php';
+require_once __DIR__ . '/../models/User.php';
 
 date_default_timezone_set('America/Sao_Paulo');
 

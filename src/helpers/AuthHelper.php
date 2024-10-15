@@ -1,5 +1,5 @@
 <?php
-require_once 'helpers/TokenHelper.php';
+require_once __DIR__ . '/../helpers/TokenHelper.php';
 
 class AuthHelper {
     public static function isAuthenticated() {

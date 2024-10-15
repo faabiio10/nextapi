@@ -1,6 +1,6 @@
 <?php
-require_once 'dao/UserDAO.php';
-require_once 'helpers/TokenHelper.php';
+require_once __DIR__ . '/../dao/UserDAO.php';
+require_once __DIR__ . '/../helpers/TokenHelper.php';
 
 class AuthController {
     /*

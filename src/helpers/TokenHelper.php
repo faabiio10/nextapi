@@ -1,6 +1,6 @@
 <?php
 
-require_once 'dao/UserDAO.php';
+require_once __DIR__ . '/../dao/UserDAO.php';
 
 use Firebase\JWT\JWT;
 use Firebase\JWT\Key;
