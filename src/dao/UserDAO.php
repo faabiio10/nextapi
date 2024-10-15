@@ -158,10 +158,11 @@ class UserDAO {
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             $retorno = curl_exec($ch);
             curl_close($ch);
+            $cStatus   = curl_getinfo($ch, CURLINFO_HTTP_CODE);
 
             $retorno = json_decode($retorno);
 
-            return !empty($retorno);
+            return ($cStatus == 200 ? true : false);
         } else {
             return false;
         }
